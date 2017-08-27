@@ -1,13 +1,15 @@
 tickerSelected=input$txt
+FROM=input$dates
 Ra <- tickerSelected %>%
         tq_get(get  = "stock.prices",
-               from = "2010-01-01",
-               to   = "2015-12-31") %>%
+               from = FROM,
+               to   = Sys.Date()-1) %>%
         group_by(symbol) %>%
         tq_transmute(select     = adjusted, 
                      mutate_fun = periodReturn, 
                      period     = "monthly", 
                      col_rename = "Ra")
+#
 Ra
 stock_returns_monthly=Ra
 w=c()
