@@ -10,9 +10,15 @@ Ra <- tickerSelected %>%
                      col_rename = "Ra")
 Ra
 stock_returns_monthly=Ra
+w=c()
+for (i in tickerSelected){
+        w[i]=1/length(tickerSelected)
+}
+
+
 wts_map <- tibble(
-        symbols = c(tickerSelected[1:2]),
-        weights = c(0.5, 0.5)
+        symbols = c(tickerSelected[1:length(tickerSelected)]),
+        weights = w
 )
 wts_map
 
