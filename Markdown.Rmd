@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and Microsoft Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **R Tools | Publish | Preview** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+    3. Grafana installieren
+
+Bald haben wir es geschafft, es muss nur noch Grafana installiert und angepasst werden. Die aktuelle Version findet ihr hier.
+
+ wget https://github.com/fg2it/grafana-on-raspberry/releases/download/v4.2.0/grafana_4.2.0_armhf.deb  
+ sudo dpkg -i grafana_4.2.0_armhf.deb  
+ sudo systemctl enable grafana-server  
+ sudo systemctl start grafana-server  
+Damit habt ihr Grafana installiert und gestartet.
+
+Ihr erreicht euer Grafana nun über http://<yourip>:3000. Als Login verwendet ihr admin / admin. Anscließend solltet ihr unter http://<yourip>:3000/profile/password euer Passwort ändern. Anschließend müsst ihr noch eure Datenquelle angeben.
