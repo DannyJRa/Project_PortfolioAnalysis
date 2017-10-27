@@ -40,6 +40,6 @@ portfolio_growth_monthly <- stock_returns_monthly %>%
                      col_rename   = "investment.growth",
                      wealth.index = TRUE) %>%
         mutate(investment.growth = investment.growth * 10000)
-
+#s
 
 
