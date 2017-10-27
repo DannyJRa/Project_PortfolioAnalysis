@@ -1,4 +1,5 @@
 #
+#2
 tickerSelected=input$txt
 FROM=input$dates
 Ra <- tickerSelected %>%
