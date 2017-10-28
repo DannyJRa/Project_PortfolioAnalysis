@@ -29,3 +29,30 @@ Bald haben wir es geschafft, es muss nur noch Grafana installiert und angepasst 
 Damit habt ihr Grafana installiert und gestartet.
 
 Ihr erreicht euer Grafana nun über http://<yourip>:3000. Als Login verwendet ihr admin / admin. Anscließend solltet ihr unter http://<yourip>:3000/profile/password euer Passwort ändern. Anschließend müsst ihr noch eure Datenquelle angeben.
+
+
+
+## Server Monitoring with Glances
+
+#Prepare influxDB
+ ```{bash}
+#create Database glances folder here:
+influx
+#shell opens
+> CREATE DATABASE glances
+> SHOW DATABASES
+
+
+```
+
+
+```{bash}
+#create glances folder here:
+sudo mkdir /etc/glances
+#copy config template to:
+sudo cp glances.conf /etc/glances/glances.conf
+#Start glances with export option
+glances --export-influxdb
+```
+
+#test
